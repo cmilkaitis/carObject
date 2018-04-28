@@ -4,7 +4,7 @@ var carDealership = {
         price : "$400",
         available: "yes",
         numAvailable: 20,
-        isAvailable : function(){
+        request : function(){
             if (carDealership.sedan.available === 'yes'){
                 return `There are ${carDealership.sedan.numAvailable} sedans available today at ${carDealership.sedan.price}.`
             }
@@ -16,7 +16,7 @@ var carDealership = {
         price : "$500",
         available: "yes",
         numAvailable: 15,
-        isAvailable : function(){
+        request : function(){
             if (carDealership.suv.available === 'yes'){
                 return `There are ${carDealership.suv.numAvailable} SUVs available today at ${carDealership.suv.price}.`
             }
@@ -29,7 +29,7 @@ var carDealership = {
         price : "$600",
         available: "no",
         numAvailable: 0,
-        isAvailable : function(){
+        request : function(){
             if (carDealership.sports.available === 'yes'){
                 return `There are ${carDealership.sports.numAvailable} sports cars available today at ${carDealership.sports.price}.`
             }
