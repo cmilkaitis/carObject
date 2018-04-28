@@ -10,7 +10,7 @@ var carDealership = {
         numAvailable: 15
     },
 
-    "sports" : {
+    "sport" : {
         price : "$600",
         numAvailable: 0
     },
@@ -19,35 +19,35 @@ var carDealership = {
         if(this[carType].numAvailable > 0){
             return `There are ${this[carType].numAvailable} ${carType}'s at ${this[carType].price}`;
         }
-        return "There are no cars available";
+        return `There are no ${carType}'s available`;
     },
 
     rentRequest(carType){
         if(this[carType].numAvailable > 0){ 
             return `You rented a ${carType} for ${this[carType].price}.`;
         }
-        return `Sorry, there are none left`;
+        return `Sorry, there are no ${carType}'s left`;
     }
 
 }
 
 
 const request_SUV = carDealership.rentRequest("suv");
-const request_SPORTS = carDealership.rentRequest("sports");
+const request_SPORT = carDealership.rentRequest("sport");
 const request_SEDAN = carDealership.rentRequest("sedan");
 
 var check_suv = carDealership.carCheck("suv");
-var check_sports = carDealership.carCheck("sports");
+var check_sport = carDealership.carCheck("sport");
 var check_sedan = carDealership.carCheck("sedan");
 
 console.log(check_suv);
-console.log(check_sports);
+console.log(check_sport);
 console.log(check_sedan);
 
 console.log('\n')
 
 console.log(request_SUV);
-console.log(request_SPORTS);
+console.log(request_SPORT);
 console.log(request_SEDAN);
 
 
