@@ -8,7 +8,7 @@ var carDealership = {
             if (carDealership.sedan.available === 'yes'){
                 return `There are ${carDealership.sedan.numAvailable} sedans available today at ${carDealership.sedan.price}.`;
             }
-            return `There are no cars available today`;
+            return `There are no sedans available today`;
         }
     },
 
@@ -20,7 +20,7 @@ var carDealership = {
             if (carDealership.suv.available === 'yes'){
                 return `There are ${carDealership.suv.numAvailable} SUVs available today at ${carDealership.suv.price}.`;
             }
-            return `There are no cars available today`;
+            return `There are no SUV's available today`;
         }
 
     },
@@ -33,7 +33,7 @@ var carDealership = {
             if (carDealership.sports.available === 'yes'){
                 return `There are ${carDealership.sports.numAvailable} sports cars available today at ${carDealership.sports.price}.`;
             }
-            return `There are no cars available today`;
+            return `There are no sports cars available today`;
         }
     }
 
