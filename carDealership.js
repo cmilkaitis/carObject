@@ -2,50 +2,55 @@ var carDealership = {
     
     "sedan" : {
         price : "$400",
-        available: "yes",
-        numAvailable: 20,
-        request : function(){
-            if (carDealership.sedan.available === 'yes'){
-                return `There are ${carDealership.sedan.numAvailable} sedans available today at ${carDealership.sedan.price}.`;
-            }
-            return `There are no cars available today`;
-        }
+        numAvailable: 20
     },
 
     "suv" : {
         price : "$500",
-        available: "yes",
-        numAvailable: 15,
-        request : function(){
-            if (carDealership.suv.available === 'yes'){
-                return `There are ${carDealership.suv.numAvailable} SUVs available today at ${carDealership.suv.price}.`;
-            }
-            return `There are no cars available today`;
-        }
-
+        numAvailable: 15
     },
 
     "sports" : {
         price : "$600",
-        available: "no",
-        numAvailable: 0,
-        request : function(){
-            if (carDealership.sports.available === 'yes'){
-                return `There are ${carDealership.sports.numAvailable} sports cars available today at ${carDealership.sports.price}.`;
-            }
-            return `There are no cars available today`;
+        numAvailable: 0
+    },
+
+    carCheck(carType){
+        if(this[carType].numAvailable > 0){
+            return `There are ${this[carType].numAvailable} ${carType}'s at ${this[carType].price}`;
         }
+        return "There are no cars available";
+    },
+
+    rentRequest(carType){
+        if(this[carType].numAvailable > 0){ 
+            return `You rented a ${carType} for ${this[carType].price}.`;
+        }
+        return `Sorry, there are none left`;
     }
 
 }
 
-var request_sedan = carDealership.sedan.request();
-var request_sportsCar = carDealership.sports.request();
-var request_SUV = carDealership.suv.request();
 
+const request_SUV = carDealership.rentRequest("suv");
+const request_SPORTS = carDealership.rentRequest("sports");
+const request_SEDAN = carDealership.rentRequest("sedan");
 
-console.log(request_sedan);
-console.log(request_sportsCar);
+var check_suv = carDealership.carCheck("suv");
+var check_sports = carDealership.carCheck("sports");
+var check_sedan = carDealership.carCheck("sedan");
+
+console.log(check_suv);
+console.log(check_sports);
+console.log(check_sedan);
+
+console.log('\n')
+
 console.log(request_SUV);
+console.log(request_SPORTS);
+console.log(request_SEDAN);
+
+
+
 
 
